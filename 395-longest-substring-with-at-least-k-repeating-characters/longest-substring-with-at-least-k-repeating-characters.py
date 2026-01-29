@@ -1,6 +1,6 @@
 class Solution:
     def longestSubstring(self, s: str, k: int) -> int:
-        if len(s)==0 and len(s) < k:
+        if len(s) < k:
             return 0
         count={}
         for i in range(len(s)):
