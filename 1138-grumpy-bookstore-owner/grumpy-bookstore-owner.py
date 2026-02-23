@@ -8,13 +8,11 @@ class Solution:
                 gain.append(0)
             else:
                 gain.append(customers[right])
-                
-        max_sum=0
-        for i in range(0,len(gain)):
-            cur_sum=sum(gain[i:i+minutes])
-            max_sum=max(max_sum,cur_sum)
-
-
+                       
+        max_sum = cur_sum = sum(gain[0:minutes])
+        for i in range(minutes, len(gain)):
+            cur_sum = cur_sum + gain[i] - gain[i - minutes]
+            max_sum = max(max_sum, cur_sum)
         return satisfied+max_sum
                 
             
